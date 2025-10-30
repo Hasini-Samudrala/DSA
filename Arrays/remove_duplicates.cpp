@@ -29,3 +29,8 @@ we can just go to that particular index k in the array and change the value of t
 and now we increment the index by 1 ,that is teh number of unique elements that are found till date 
 we dont need to change the nums[0] becoz it will already be the desired element only 
 */
+
+
+/* just that u need to remove duplictaes , u will take two integers ( i and k ) nd k is represetig the index of teh one which are 
+not duplicates where as teh index i is going through teh whoe array 
+at last we will be returning teh integer k */
