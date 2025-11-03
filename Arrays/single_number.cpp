@@ -49,3 +49,14 @@ say we have 4,1,2,1,2 then when we did XOR then basically we would get 4^1^2^2^1
 so this is used to remove the duplicates from teh data 
 more optimised than teh previos approach 
 */
+//practise
+class Solution{
+    public:
+    int singleNumber(vector<int>&nums){
+        int n = nums[0];
+        for(int i=1;i<nums.size();i++){
+            n = n^nums[i];
+        }
+        return n;
+    }
+};
