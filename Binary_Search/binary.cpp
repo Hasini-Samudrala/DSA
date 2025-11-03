@@ -30,4 +30,5 @@ public:
 /*
 basic binary serach which takes logn time to complete and then it is used maximum only when teh array is sorted either in ascedng order or in descdeing order 
 
+if there is no low<=high , if there is no '=' then basically it is gonna fail for teh n = 1 cases 
 */
