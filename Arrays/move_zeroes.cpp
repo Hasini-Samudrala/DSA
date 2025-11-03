@@ -24,3 +24,23 @@ in short - we are asked to move all the zeroes to the right without changing the
 So we would like to move all the zeroes so we would check every element and if it is not zero then we would like to swap 
 that element with another left element till there from ther ewould liek to continue 
 */
+
+//approach - 2
+class Solution {
+    public:
+    void moveZeroes( vector<int>&nums){
+        int n = nums.size();
+        int k =0;
+        for(int i=0;i<n;i++){
+            if(nums[i]!=0){
+                nums[k] = nums[i];
+                k++;
+            }
+        }
+
+        for(int i = k;i<n;i++,k++){
+            nums[k]=0;
+        }
+
+    }
+};

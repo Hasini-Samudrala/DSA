@@ -23,3 +23,22 @@ moved so we wpuld do that modulus thing k = k%n so that number of places can be 
 next we would move a particular element to the (i+k)%n position 
 Because if you're rotating right by k, the element at index i moves to (i + k) — but to stay in bounds, we take modulo n.
 */
+
+
+class Solution{
+    public:
+    void rotate(vector<int>&nums, int k ){
+        int n =  nums.size();
+        for(int i=0;i<k;i++){
+            int p = nums[0];
+            nums[0] = nums[n-1];
+            for(int j = nums.size()-1 ; j >1;j--){
+                nums[j] = nums[j-1];
+            }
+            if(n>=2){
+            nums[1] = p;}
+        }
+    }
+};
+
+/*normal rotation of teh array , but time complexity it doesnt work */
