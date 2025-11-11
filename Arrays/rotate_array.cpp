@@ -42,3 +42,26 @@ class Solution{
 };
 
 /*normal rotation of teh array , but time complexity it doesnt work */
+
+
+// one rotation 
+
+// User function Template for C++
+
+class Solution {
+  public:
+    void rotate(vector<int> &arr) {
+        // code here
+        int n = arr.size();
+        int p= arr[0];
+        arr[0] = arr[n-1];
+        for(int i=n-1;i>1;i--){
+            arr[i]=arr[i-1];
+        }
+        
+        if(n>=2){
+            arr[1]=p;
+        }
+        
+    }
+};
