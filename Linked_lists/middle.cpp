@@ -20,9 +20,13 @@ class Solution{
 //Intution 
 /*
 So we need to return from the middle node 
-so here this is fats nd slow pointer method 
+so here this is fast nd slow pointer method 
 in whoch we would move a node with 2x speed and the other with 1x speed so by the time one reaches teh end 
 teh other would be at teh middle exactly nd also as teh required one is say that if it is even then we need teh 
 second element that also covers in this case 
+*/
 
+/*
+traversing one linked list with teh speed of 2 
+and other with speed pf one 
 */
