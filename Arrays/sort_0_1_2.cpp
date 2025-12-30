@@ -65,3 +65,7 @@ class Solution{
 };
 
 //DNF algorithm 
+/*
+here mid is not the middle of teh arrray , it starts with being teh initial of teh array only, 
+nd the high is initially the high but later on it decreases the index value accordingly
+*/
