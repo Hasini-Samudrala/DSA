@@ -1,0 +1,46 @@
+1. swapping two numbers
+    A = A^B;
+    B = A^B;
+    A = A^B
+    the numbers are swapped 
+
+2. checking if the i-th bit is set( if the i-th bit is equal to 1) or not 
+    (1<<i)&num -> set if the result !=0
+    (num>>i)&1 -> set if the result !=0
+
+3.setting the i-th bit  - making the i-th bit as 1 
+    num | (1<<i)
+
+4. clearing the i-th bit 
+    num & ~(1<<i)
+
+5.toggling the i-th bit ( flpping the i-th bit)
+    num ^ (1<<i)
+
+6.for checking if a number is odd or not just use "%" to find 
+
+7.to check if a number is power of 2 or not 
+    usually if a number is power of 2 which means only one bit is set in its binary form and then when u subtract 1 , then all the bits
+    next to that set bit are gonna be flipped ,
+    and the bitwise AND gives the output 0 for those two numbers 
+    so to check if teh number is power of 2 or not 
+    n &(n-1) ==0 --> number is power of 2 
+
+8.counting the number of 1's in the number 
+    while(n)
+            n = n & (n-1) ;
+            count++;
+    this is brain kernighan's algorithm 
+    everytime it runs a loop, it eliminates the leftmost 1
+
+9. setting the rightmost unset bit to 1 
+    when we look at n+1 binary form , we can see that the differnece between the n and n+1 would be the rightmost unset bit 
+    in n+1 , teh rightmost unset bit cahnges to 1 
+    for example , lets take the last bit is unset , so when i add 1 the last is 1 now , which is the rightmost unset bit 
+    similarly if that 0 is somewhere in the middle which means all the numbers till then are 1, so by adding 1 all of them become 0 and the 
+    next 0 becomes 1 , so this leads us to the solution of this problem 
+
+    solution - n|n+1 
+    by doing OR operation we can make the rightmost unset bit to 1 coz that is the first where we see the differnce between two consecutive numbers 
+
+
