@@ -22,3 +22,18 @@ class Solution{
 
 //intution 
 //check the notes
+
+class SOlution{
+    public:
+    ListNode* reverseList(ListNode* head){
+        ListNode* prev = NULL;
+        ListNode* temp = head;
+        while(temp){
+            ListNode* front = temp->next;
+            temp->next=prev;
+            prev = temp;
+            temp = front;
+        }
+        return prev;
+    }
+};
