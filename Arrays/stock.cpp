@@ -21,7 +21,7 @@ class Solution {
 
 //Intution 
 /*
-The goal is to buy at the lowest price and sell at the highest price after buying.
+The goal is to buy at                 the lowest price and sell at the highest price after buying.
 
 We track the minimum price so far as we iterate through the list (i.e., the best "buy" price).
 

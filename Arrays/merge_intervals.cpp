@@ -32,4 +32,4 @@ public:
 };
 
 /*
-\normal only */
+\normal o           nly */
