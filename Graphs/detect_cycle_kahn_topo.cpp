@@ -13,7 +13,7 @@ class Solution{
         for(int i=0;i<V;i++){
             if(inDegree[i]==0)
             q.push(i);
-        }
+        }  
         int cnt;
         while(!q.empty()){
             int node = q.front();
