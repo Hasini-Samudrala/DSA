@@ -1,0 +1,35 @@
+Priority Queue : elements with highest priority processed first 
+
+Binary Heap : 
+    two rules 
+        1. complete binary heap : all the levels are completely filled except the last level , if that is filled then new element 
+                                is inserted on the new level to the left most 
+        2. satisfy heap property 
+
+Heap property: 
+    1. min heap - the node value is less than the children value 
+    2. max heap - the node value is greater than its children value 
+
+Accessing Nodes:
+    For example , parent node is at an index i, then its children are at (2*i+1) and (2*i-1)
+    if the child node is at i , then its parent node is (i-1)/2
+
+
+Insert() : inserting a key to the binary heap, inserts at the first vacant position in the last level, if that is filled go to the 
+            new level ka left most position , later check if the min heap property is maintained - O(logN)
+
+Heapify() : restoring the min heap property which is violated at index i - O(logN)
+
+getMin() : returns the minimum value in the heap ( for the min heap - minimum value is at the root so basically arr[0])- O(1)
+
+ExtractMin() : removes the minimum element from the heap - O(logN)
+                for the min heap - it removes the root node , so it copies the last node to the root node first 
+                this deletes the element and the size is also decreased .. later it calls the heapify function to restore the heap property 
+
+DecreaseKey() : we need to update the vaue of given key .. for here we assume that its value is less than already existing value
+                so first we just update arr[i]=new_val.. with this complete binary tree property is not violated as we are just        
+                updating the existing value , but the min heap property might get violated .. that too the lower subtrees are not affected 
+                only the ancestors might get affected .. call recursively and chnage that - O(logN)
+        
+Delete() : so to delete an element from the heap .. first we change its value to INT_MIN ,after that we call the DecreaseKey 
+            function .. as this is the smallest it reaches the top and now we call ExtractMin() - O(logN)

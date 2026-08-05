@@ -34,3 +34,17 @@ we dont need to change the nums[0] becoz it will already be the desired element 
 /* just that u need to remove duplictaes , u will take two integers ( i and k ) nd k is represetig the index of teh one which are 
 not duplicates where as teh index i is going through teh whoe array 
 at last we will be returning teh integer k */
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
+        for(int j = 0 ;j<nums.size();j++){
+            if(nums[i]!=nums[j]){
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        return i+1;
+    }
+};

@@ -1,6 +1,7 @@
 /*
 probelm link -https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 */
+//actual algo at the bottom
 
 //Apprach 
 class Solution {
@@ -57,3 +58,29 @@ When loop ends (l == r), we've found the minimum at nums[l].
 ✅ Why it works:
 Even though the array is rotated, binary search still works if you look at sorted halves carefully.
 */
+
+
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int low = 0;
+        int high = nums.size()-1;
+        int ans = INT_MAX;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[low]<=nums[mid]){
+                ans = min(ans,nums[low]);
+                low  = mid+1;
+            }
+            else{
+                high =  mid-1;
+                ans = min(ans,nums[mid]);
+            }
+        }
+        return ans;
+    }
+};
+
+// it is like since the array is sorted but not in correct way 
+// we should try to find the point at which it is rotated 
+// so  evertime you do that u maintain a min of the part which u r gonna skip next iteration 

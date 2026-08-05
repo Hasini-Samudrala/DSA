@@ -15,8 +15,9 @@ public:
             if (nums[mid] == target) {
                 return true;
             } 
-            if (nums[mid] == nums[left]) {
+            if (nums[mid] == nums[left] && nums[mid]==nums[right]) {
                 left++;
+                right--;
                 continue;
             }
             if (nums[mid] >= nums[left]) {
@@ -83,6 +84,8 @@ Return false if not found.
 
 ❗ Why left++ is needed:
 When nums[mid] == nums[left], we can't decide which half is sorted. Skipping the duplicate narrows the search window safely.
+similarly the right half , so we keep high--
+only problem is when nums[left]==nums[mid]==nums[right]
 
 💡 One-liner Trick:
 “When duplicates exist, be ready to skip the confusing ones (left++) when you're unsure which side is sorted.”

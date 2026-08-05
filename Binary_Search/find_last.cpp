@@ -48,3 +48,63 @@ so when we try to find the first position we would make r as m-1
 and when u r finding teh last position of the element then we make l as m+1
 and for this we would mainatin an varaible say n and call it with 1 and 0 according to teh situation 
 */
+
+
+class Solution {
+public:
+    int firstOccurrence(vector<int>& arr, int x) {
+    int low = 0, high = arr.size() - 1;
+    int first = -1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == x) {
+            first = mid;
+            high = mid - 1;      // Search on the left
+        }
+        else if (arr[mid] < x) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+
+    return first;
+}
+
+    int lastOccurrence(vector<int>& arr, int x) {
+    int low = 0, high = arr.size() - 1;
+    int last = -1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == x) {
+            last = mid;
+            low = mid + 1;       // Search on the right
+        }
+        else if (arr[mid] < x) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+
+    return last;
+}
+    vector<int> searchRange(vector<int>& nums, int target) {
+      
+    int first = firstOccurrence(nums, target);
+    if(first==-1) return {-1,-1};
+    int last = lastOccurrence(nums, target);
+
+    return {first, last};
+}
+    
+};
+
+
+//direct logic 
