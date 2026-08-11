@@ -23,7 +23,7 @@ private:
         if(root==NULL){
             return 0;
         }
-        int leftSum = max(0,maxPath(root->left,maxi));
+        int leftSum = max(0,maxPath(root->left,maxi)); // here we check for the maximum coz there might be neagvtive numbers as well
         int rightSum = max(0,maxPath(root->right,maxi));
         maxi = max(maxi,leftSum+rightSum+root->val);
 
