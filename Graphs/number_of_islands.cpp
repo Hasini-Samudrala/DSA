@@ -50,3 +50,42 @@ public:
         return cnt;
     }
 };
+
+
+
+
+
+int n = grid.size();
+int m = grid[0].size();
+
+queue<pair<int,int>>q;
+vis[row][col]=1;
+q.push({row,col}):
+while(!q.empty()){
+    int row = q.front().first;
+    int col = q.front().second;
+
+    int delRow = {-1,0,1,0};
+    int delCol = {0,1,0,-1};
+
+    for(int i = 0;o<4;i++){
+        int nRow = rol+delRow[i];
+        int nCol = col + delRow[i];
+
+        if(nrow<n && nrow>=0 && ncol<m && ncol>=0 &&
+        vis[nRow][nCol]!=1 && grid[nRow][nCol]==1){
+            vis[nRow][nCol]=1;
+            q.push({nRow,nCol});
+        }
+    }
+}
+
+for(int i =0;i<n;i++){
+    for(int j = 0;j<m;j++){
+        if(vis[i][j]!=1 && grid[row][col]==1){
+            bfs(grid,vis,i,j);
+            count++;
+        }
+    }
+}
+return count;

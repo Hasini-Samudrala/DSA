@@ -93,3 +93,23 @@ After removing the smallest head, the next node in that same list becomes the ne
 This way, the heap always contains exactly the nodes that are capable of being the next smallest, so we never need to store all N nodes.
 
 */
+
+bool opertaor()(ListNode* a, ListNode* b){
+    return a->val > b->val;
+}
+
+priority_queue<ListNode* , vector<ListNode*>,compare>pq;
+for(auto list:lists){
+    pq.push(list);
+}
+ListNode* dummy = new ListNOde(0);
+ListNode* tail = dummy;
+while(!pq.empty()){
+    ListNode* curr = pq.top();
+    tail->next = curr;
+    pq.pop();
+    if(curr->next){
+        pq.push(curr->next);
+    }
+}
+return dummy->next;

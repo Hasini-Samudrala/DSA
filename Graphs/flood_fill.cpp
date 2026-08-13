@@ -28,3 +28,20 @@ public:
         return ans;
     }
 };
+
+
+
+dfs(){
+    ans[row][col]=newColor;
+    int n = image.size();
+    int m = image[0].size();
+    for(int i=0;i<4;i++){
+        int nrow = row+delrow[i];
+        int ncol = col+ delcol[i];
+
+        if(nrow>=0 && nrow<n && ncol>=0 && ncol<m && 
+        image[nrow][ncol]==iniColor && ans[nrow][ncol]!=newColor){
+            dfs(inicolor,newcolor,image,delrow,delcol,nrow,ncol);
+        }
+    }
+}
