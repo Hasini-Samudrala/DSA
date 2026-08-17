@@ -56,3 +56,41 @@ public:
         return topo.size() == numCourses;
     }
 };
+
+
+
+topoSORt(){
+    vector<int>inDegree(V,0);
+    for(int i =0;i<V;i++){
+        for(auto it:adj[i]){
+            inDegree[i]++;
+        }
+    }
+    queue<int>q;
+    vector<int>topo;
+
+    for(int i =0;i<V;i++){
+        if(inDegree[i]==0)
+        q.push(i);
+    }
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        topo.push_back(node);
+        for(auto it :adj[node]){
+            inDegree[it--];
+            if(indegree[it]==0)
+            q.push(it);
+        }
+    }
+    return topo;
+}
+vector<vector<int>>adj(numCourses);
+for(auto it:prerequisites){
+    int course = it[0];
+    int pre = it[1];
+    adj[pre].push_back(course);
+
+}
+vector<int> topo = topoSOrt(numCourses, adj);
+return topo.size()==numCourses;
